@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>ようこそ　筋トレを始めていきマッチョ！！</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            font-family: 'Montserrat', sans-serif, 'YuGothic', 'Yu Gothic', '游ゴシック体', 'Meiryo', 'メイリオ', sans-serif;;
+            font-size: 20px;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative; /* 子要素を相対的に配置するために親要素に位置を設定 */
+        }
+
+        zero {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: left;
+            padding: 0px;
+        }
+    
+        header {
+            background-color: #36899b;
+            color: #000000;
+            position: relative; /* 画像とテキストを重ねるためにheaderにも位置を設定 */
+            text-align: center;
+            font-size: 20px;
+            padding: 1%;
+        }
+
+        header img {
+            width: 100%; /* 必要な幅に合わせて調整 */
+            overflow: hidden; /* 要素内の内容を隠す */
+            white-space: nowrap; /* 子要素を横一列に配置 */
+        }
+
+        header h1 {
+            position: absolute; /* テキストを絶対的に配置 */
+            top: 40%; /* 上から40% */
+            left: 50%; /* 左から50% */
+            transform: translate(-50%, -50%); /* 中央揃え */
+            color: rgb(255, 255, 255);
+            font-size: 3em; /* フォントサイズ */
+        }
+
+        header h2 {
+            position: absolute; 
+            top: 60%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            color: rgb(255, 255, 255);
+            font-size: 2em; 
+        }
+
+        nav {
+            background-color: #ffffff;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 25px;
+            padding: 20px;
+        }
+
+        nav ul li div {
+            display: flex; /* 要素を横並びにする */
+            align-items: center; /* 垂直方向の中央揃え */
+            justify-content: center; /* 横方向の中央揃え */
+            text-decoration: underline;
+            text-decoration-color: yellow; 
+            margin-top: 1px; /* メニューアイテムの上下の余白 */
+            margin-right: 1px;
+        }
+
+        nav ul li div a {
+            margin-right: 10px; /* テキストと画像の間の余白を設定 */
+            color: #000000;
+            text-decoration: none;
+        }
+
+        nav a:active {
+            color: yellow; 
+        }
+
+        nav ul li div img {
+            max-width: 45px; /* 画像の幅を設定 */
+            height: auto; /* 高さを自動調整 */
+        }
+        
+        footer {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .dot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+                transform: scale(1.06); /* フェードイン中に少し拡大する効果を追加 */
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .mySlides {
+            display: none;
+            animation: fade 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form method="POST" action="/logout">
+            <button type="submit" class="button">Logout</button>
+        </form>
+        <zero>
+            あなたのユーザーIDは {{ "%07d"|format(user_id|int) }} です
+        </zero>
+        <header>
+            <div class="image-container">
+                <div class="slideshow-container">
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore.css') }}">
+                    </div>
+                  
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore1.css') }}">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore2.css') }}">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore3.css') }}">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore4.css') }}">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore5.css') }}">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore6.css') }}">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="{{ url_for('static', filename='css/kintore7.css') }}">
+                    </div>
+                  </div>
+                  <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+                  
+                    // 前後のスライドを表示する関数
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                  
+                    // 現在のスライドを指定する関数
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                  
+                    // スライドを表示する関数
+                    function showSlides(n) {
+                      let i;
+                      const slides = document.getElementsByClassName("mySlides");
+                      if (n > slides.length) { slideIndex = 1 }
+                      if (n < 1) { slideIndex = slides.length }
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                      }
+                      slides[slideIndex - 1].style.display = "block";
+                    }
+
+                    // 自動再生を有効化
+                    setInterval(() => {
+                        plusSlides(1);
+                    }, 5000); // 5秒ごとに次のスライドへ
+                  </script>
+              </div>
+            <h1>HUSTLE ＆ MUSCLE</h1>
+            {% if welcome_message %}
+                <h2>{{ welcome_message }}</h2>
+            {% else %}
+                <h2>ようこそ</h2>
+            {% endif %}
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <div>
+                       <h3><a href="/ank">はじめのアンケート</a></h3>
+                       <img src="{{ url_for('static', filename='css/meal3.css') }}">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                       <h3><a href="/schedule">スケジュール</a></h3>
+                       <img src="{{ url_for('static', filename='css/schedule.css') }}">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                       <h3><a href="/douga">筋トレフォーム動画</a></h3>
+                       <img src="{{ url_for('static', filename='css./schedule.css') }}">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3><a href="/keisan">BMI計算ツール</a></h3>
+                        <img src="{{ url_for('static', filename='css/scale.css') }}">
+                     </div>                                                                              
+                </li>
+                <li>
+                    <div>
+                       <h3><a href="/training">筋トレ入門</a></h3>
+                       <img src="{{ url_for('static', filename='css/schedule.css') }}">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                       <h3><a href="/qa">筋トレＱ＆Ａ</a></h3>
+                       <img src="{{ url_for('static', filename='css/qa.css') }}">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                       <h3><a href="/meal">筋トレと栄養について</a></h3>
+                       <img src="{{ url_for('static', filename='css/meal3.css') }}">
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <footer>
+            <p>&copy; 2024　HUSTLE ＆ MUSCLE</p>
+        </footer>
+    </div>
+</body>
+</html>

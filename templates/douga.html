@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>筋トレフォーム動画</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSSスタイル */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family:Terminal, sans-serif;
+            line-height: 3;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+        }
+ 
+        header {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+        }
+ 
+        nav ul {
+            list-style: none;
+        }
+ 
+        nav ul li {
+            display: inline;
+            text-decoration: underline;
+            text-decoration-color: #dbdcdc; /* 下線の色を黄色にする */
+            margin-right: 20px;
+        }
+       
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+ 
+        nav a:active {
+            color: yellow; /* クリック時の色をここで指定 */
+        }
+ 
+        main {
+            background-color: #ffffff;
+            color:#000000 ;
+            padding: 20px;
+        }
+ 
+        main h2 {
+            background-color: #36899b;
+            color:#ffffff ;
+            padding: 5px;
+    
+        }
+
+        .marker-normal {
+            background: linear-gradient(transparent 75%, #ffff7f 75%);
+        }
+
+        footer {
+            background-color:#36899b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+
+        .video-container {
+            max-width: 800px;
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+ 
+ 
+    </style>
+</head>
+ 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HUSTLE ＆ MUSCLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form method="POST" action="/logout">
+        <button type="submit" class="button">Logout</button>
+    </form> 
+  <header>
+      <h1><a href="/top">HUSTLE ＆ MUSCLE</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/schedule">スケジュール</a></li>
+          　
+          <li><a href="/#">筋トレフォーム動画</a></li>
+          　
+          <li><a href="/keisan">BMI計算ツール</a></li>
+          　
+          <li><a href="/training">筋トレ入門</a></li>
+          　
+          <li><a href="/qa">筋トレＱ＆A</a></li>
+          　
+          <li><a href="/meal">筋トレと栄養について</a></li>
+        </ul>
+      </nav>
+  </header>
+ 
+  <main>
+    <br>
+    <br>
+    <h3>➡筋トレフォーム動画(随時更新)<!DOCTYPE html></h3>
+            <img src="{{ url_for('static', filename='images/bui.jpg') }}"width="720"height="450">
+            <h2>▶ダンベルカール(上腕二頭筋"短頭")<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga.mp4') }}">
+                </video>
+            </div>         
+            <h4><p>1.足幅を肩幅と同じくらいにして背筋を伸ばして立つ</p>
+            <p>2.ダンベルを手全体で握る</p>
+            <p>3.両手で肩の位置まで上げる</p>
+            <p>4.持ち上げたら、その状態を2秒キープする</p>
+            <p>5.ゆっくり下ろしていく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・肘を固定する</p>
+            <p>・背中や腰を使ってあげない</p></h4>
+            </div>
+            <br>
+            <h2>▶ハンマーカール(上腕二頭筋"長頭")<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga1.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.背筋をしっかりと伸ばす</p>
+            <p>2.ダンベルを握って肩からまっすぐ下ろす</p>
+            <p>3.ダンベルを持った手のひらは自分に向けた状態でキープ</p>
+            <p>4.ダンベルをゆっくりと上げていく</p>
+            <p>5.肘の角度が45度のポイントで停止する</p>
+            <p>6.停止した後、ゆっくりとダンベルを下げていく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・肘を固定する</p>
+            <p>・背中や腰を使ってあげない</p></h4>
+            </div>
+            <br>
+            <h2>▶ダンベルフレンチプレス(上腕三頭筋)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga2.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.背筋をしっかりと伸ばし、腰は曲げない</p>
+            <p>2.ダンベルを片手または両手で支えるようにし、後ろに回す</p>
+            <p>3.バンザイした状態でダンベルを支える</p>
+            <p>4.ダンベルをゆっくりと下げていく</p>
+            <p>5.(4)の時、首を曲げないように注意する</p>
+            <p>6.上腕三頭筋に効いていると感じたら止める</p>
+            <p>7.下ろした時よりも早いペースでダンベルを上げる</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・曲げ伸ばしする際に肘を前後させない</p>
+            <p>・力を加えにくいため、高負荷の重量は避ける(けがの恐れ)</p></h4>
+            </div>
+            <br>
+            <h2>▶ディップス(上腕三頭筋)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga3.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.ベンチ台もしくは安定したイスなどを用意する</p>
+            <p>2.台を背面にして両手をつき、まっすぐに伸ばす</p>
+            <p>3.両足を前に伸ばし、かかとをそろえる（スタートポジション）</p>
+            <p>4.肘をゆっくりと曲げながら体を沈めていく</p>
+            <p>5.肘が90度になるまで沈んだら、ゆっくりと同じ軌道で元に戻る</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・ベンチや椅子は滑らないものを使用する</p>
+            <p>・慣れてきたら膝を伸ばしていく(高負荷)</p></h4>
+            </div>
+            <br>
+            <h2>▶ベンチプレス(大胸筋中部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga4.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.フラットベンチに仰向けになって寝る</p>
+            <p>2.(1)の時、肩甲骨を寄せて、背中にアーチを作っていく</p>
+            <p>3.バーベルを肩幅の1.5倍分ほど外側を握る</p>
+            <p>4.下半身をリラックスさせて安定させる</p>
+            <p>5.ラックからバーベルを外して、ゆっくりと胸に下ろす</p>
+            <p>6.勢いをつけずに素早くバーベルを持ち上げる</p>
+            <p>7.限界まで上げたら、1秒間キープ</p>
+            <p>8.その後、元に戻していく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・手首を曲げないこと</p>
+            <p>・息を吐きながら持ち上げる(力が込めやすい)</p></h4>
+            </div>
+            <br>
+            <h2>▶インクラインダンベルプレス(大胸筋上部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga5.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.ベンチの背もたれの角度は30～45度ぐらい。あまり角度がきつすぎると肩に、許すぎると大胸筋中部に負荷が逃げてしまうので注意。</p>
+            <p>2.ベンチに座り、膝に近い太ももの上にダンベルを乗せる</p>
+            <p>3.背もたれに倒れながら膝を上げる反動を利用して、ダンベルをスタートポジションまで持っていき、維持する</p>
+            <p>4.肩甲骨を寄せて、しっかりと足を踏ん張る</p>
+            <p>5.肩が上がったり首がすくんだりしないように胸を張ったまま、前腕が床と垂直になるようにダンベルを下ろす</p>
+            <p>6.ダンベルが胸の位置まで来たら、少し弧を描くように一気に押し上げる。この時、体と上腕の角度が直角では肩を痛めやすくなるので、少し脇を閉めた60～80度ぐらいがベスト</p>
+            <p>7.セット終了後、膝でダンベルを迎えに行きながら上体を着座姿勢まで起こす</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・手首を曲げないこと</p>
+            <p>・負荷を伝えるため可動域を広くとる(しっかり降ろす)</p></h4>
+            </div>
+            <br>
+            <h2>▶ダンベルプレス(大胸筋中部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga6.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.ベンチに座り、膝に近い太ももの上にダンベルを乗せる</p>
+            <p>2.膝を上げる反動を利用して、ダンベルをスタートポジションまで持っていき、維持する</p>
+            <p>3.肩甲骨を寄せて、しっかりと足を踏ん張る</p>
+            <p>4.胸筋を伸縮させて真っ直ぐ上に持ち上げる</p>
+            <p>5.ダンベルを支えるイメージで、ゆっくり下げていく</p>
+            <p>6.ダンベルを下げたら、グッと力を入れてダンベルを弧を描くイメージで押し上げる</p>
+            <p>7.セット終了後、膝でダンベルを迎えに行きながら上体を着座姿勢まで起こす</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・手首を曲げないこと</p>
+            <p>・負荷を伝えるため可動域を広くとる(しっかり降ろす)</p></h4>
+            </div>
+            <br>
+            <h2>▶デクラインダンベルプレス(大胸筋下部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga7.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.ベンチの角度を15度ほどに傾ける</p>
+            <p>2.ベンチに仰向けに寝っ転がり膝をたてる</p>
+            <p>3.両手にダンベルを持つ</p>
+            <p>4.肩甲骨を寄せて、胸を張り、腕を真上に伸ばす</p>
+            <p>5.(4)の時、背中のアーチを維持する</p>
+            <p>6.胸の張りを感じながら、肘を曲げていく</p>
+            <p>7.限界までダンベルを下ろしたら、2秒間キープ</p>
+            <p>8.その後、素早くダンベルを持ち上げる</p>
+            <p>9.セット終了後、膝でダンベルを迎えに行きながら上体を着座姿勢まで起こす</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・手首を曲げないこと</p>
+            <p>・負荷を伝えるため可動域を広くとる(しっかり下ろす)</p></h4>
+            </div>
+            <br>
+            <h2>▶ダンベルフライ(大胸筋中部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga8.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.フラットベンチに座り、ダンベルを持つ</p>
+            <p>2.両足を八の字に開き、足をしっかり固定する</p>
+            <p>3.肩甲骨をしっかり寄せて胸を張る</p>
+            <p>4.ダンベルを構えて真上に持ち上げ、胸に負荷を載せる事を意識する</p>
+            <p>5.肘を90度に曲げ軽く外側に広げる</p>
+            <p>6.弧を描くようににダンベルを下ろしていく</p>
+            <p>7.胸にしっかりストレッチをかけたら、ゆっくり上げて戻していく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・負荷を伝えるため可動域を広くとる(しっかり下ろす)</p>
+            <p>・腕に負荷が逃げないよう肘は90度をキープする</p></h4>
+            </div>
+            <br>
+            <h2>▶プッシュアップ(大胸筋)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga9.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.うつ伏せで寝っ転がる</p>
+            <p>2.(1)の時、足はあまり広げない</p>
+            <p>3.肩幅よりも少し広めに手幅取る</p>
+            <p>4.そのまま、体を持ち上げる</p>
+            <p>5.かかとから首まで一直線を維持する</p>
+            <p>6.息を吸いながら、下ろしていく</p>
+            <p>7.しっかりと胸を下げた状態でキープ</p>
+            <p>8.空気を吐きながら、持ち上げる</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・筋肉の収縮を意識する</p>
+            <p>・1回1回の動きをスローで行う</p></h4>
+            </div>
+            <br>
+            <h2>▶ショルダープレス(三角筋前部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga10.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.変形式ベンチを45度に設定する</p>
+            <p>2.ベンチに座りダンベルを持ち上げ、手のひらを体の向きと同じ方向に構える</p>
+            <p>3.両手ともダンベルを持ち上げておく</p>
+            <p>4.(3)の時、広背筋を収縮させる(※セットポジション)</p>
+            <p>5.ダンベルを上にぐっと持ち上げていく</p>
+            <p>6.持ち上げる時に三角筋の収縮を感じるようにする</p>
+            <p>7.限界までしっかりと持ち上げたら、キープする</p>
+            <p>8.キープした後、ゆっくりと元の位置までダンベルを下ろしていく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:110px;">
+            <p>〇ポイント</p>
+            <p>・胸を張って腕に負荷が集中しないようにする</p></h4>
+            </div>
+            <br>
+            <h2>▶サイドレイズ(三角筋中部)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga11.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.両手にダンベルを持って肘を軽く曲げる</p>
+            <p>2.足は肩幅くらいに開いて、上半身は少し前傾姿勢にする</p>
+            <p>3.(2)の時、背中を丸めないよう意識する</p>
+            <p>4.肘を軽く曲げたまま、ゆっくりと上に上げていく</p>
+            <p>5.肩と同じくらいの高さまで持ち上げたら、キープする</p>
+            <p>6.その後、重さに耐えながら元に戻していく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・三角筋の負荷が逃げないよう常に意識する</p>
+            <p>・慣れてきたら回数を増やす</p></h4>
+            </div>
+            <br>
+            <h2>▶ダンベルシュラッグ(僧帽筋)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga12.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.足の幅は肩幅分ほど広げる</p>
+            <p>2.ダンベルをぶら下げるように手で支える</p>
+            <p>3.ダンベルは体にくっつけず、肩からまっすぐと下ろす</p>
+            <p>4.背筋をしっかりと伸ばす</p>
+            <p>5.ダンベルを横に構える</p>
+            <p>6.息を吐きながら、ダンベルを持ち上げる</p>
+            <p>7.息を吸いながら、ダンベルをゆっくりと下げていく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:110px;">
+            <p>〇ポイント</p>
+            <p>・三角筋の負荷が逃げないよう常に意識する</p></h4>
+            </div>
+            <br>
+            <h2>▶ダンベルローイング(広背筋)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga13.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.フラットベンチに体の片側の膝と手を乗せ、半身だけ四つん這いの体勢をとる</p>
+            <p>2.フラットベンチに乗せていない側の手でダンベルを握る</p>
+            <p>3.胸を張り、ダンベルを握った腕を下へ垂らす</p>
+            <p>4.ダンベルを体の斜め後ろに向けて持ち上げる</p>
+            <p>5.肘の位置が腰の辺りになったら動作を止める</p>
+            <p>6.そのままの姿勢で1秒間キープ</p>
+            <p>7.ゆっくり3の姿勢へ戻していく</p>
+            <p>8.反対側も同様に行う</p>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・肩甲骨をしっかり寄せる</p>
+            <p>・肘を大きく動かす</p></h4>
+            </div>
+            <br>
+            <h2>▶スクワット(大腿四頭筋・大臀筋・ハムストリングス)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga14.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.肩幅に足を広げる(足先はやや外側に向けておく)</p>
+            <p>2.背筋をしっかりと伸ばして息を吸いながら下げていく</p>
+            <p>3.(2)の時、膝がつま先よりも前に出さないようお尻を後ろに下げるイメージで体を下げる</p>
+            <p>4.少しずつ上半身を前に倒していく</p>
+            <p>5.(4)の時、背中が丸まらないよう注意する</p>
+            <p>6.地面と太ももが平行になるまで下げたら、少しの間キープ</p>
+            <p>7.その後ゆっくりと元に戻していく</p>
+            <p>8.(7)の時、膝を伸ばしきらない位置まで戻しましょう</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:160px;">
+            <p>〇ポイント</p>
+            <p>・1回1回の動きをスローで行う</p>
+            <p>・負荷に慣れてきたら重り(ダンベルなど)を持って行う</p></h4>
+            </div>
+            <br>
+            <h2>▶レッグレイズ(腹直筋)<!DOCTYPE html></h2>
+            <div class="video-container">
+                <video controls width="600">
+                  <source src="{{ url_for('static', filename='videos/douga15.mp4') }}">
+                </video>
+            </div>
+            <h4><p>1.マットなどを敷いた床に仰向けで寝っ転がる</p>
+            <p>2.両手は自然に広げて体を安定させる</p>
+            <p>3.膝を少しだけ曲げて、下半身を上に上げていく</p>
+            <p>4.垂直になるまで上げたら、そこで2秒間停止する</p>
+            <p>5.その後、ゆっくりと元に戻していく</p>
+            <br>
+            <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:110px;">
+            <p>〇ポイント</p>
+            <p>・上半身を固定して下半身をブレさせない</p></h4>
+            </div>
+            <br>
+            <br>
+            <br>
+  </main>
+ 
+  <footer>
+    <p>&copy; 2024　HUSTLE ＆ MUSCLE</p>
+  </footer>
+</body>
+</html>

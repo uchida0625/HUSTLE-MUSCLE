@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>食事と栄養</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        /* CSSスタイル */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family:Terminal, sans-serif;
+            line-height: 3;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+        }
+
+        zero {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: left;
+            padding: 0px;
+
+        }
+ 
+        header {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+        }
+ 
+        nav ul {
+            list-style: none;
+        }
+ 
+        nav ul li {
+            display: inline;
+            text-decoration: underline;
+            text-decoration-color: #dbdcdc; /* 下線の色を黄色にする */
+            margin-right: 20px;
+        }
+       
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+ 
+        nav a:active {
+            color: yellow; /* クリック時の色をここで指定 */
+        }
+ 
+        main {
+            background-color: #ffffff;
+            color:#000000 ;
+            padding: 20px;
+        }
+
+        main h2 {
+            color:#36899b ;
+            padding: 0.3em;
+            padding-bottom: .50px;
+            border-bottom: solid 3px #36899b;
+        }
+
+        .marker-normal {
+            background: linear-gradient(transparent 75%, #ffff7f 75%);
+        }
+
+        footer {
+            background-color:#36899b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+ 
+ 
+    </style>
+</head>
+ 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HUSTLE ＆ MUSCLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form method="POST" action="/logout">
+        <button type="submit" class="button">Logout</button>
+    </form>
+    <header>
+        <h1><a href="/top">HUSTLE ＆ MUSCLE</a></h1>
+          <nav>
+            <ul>
+              <li><a href="training">筋トレ入門</a></li>
+              　
+              <li><a href="/schedule">スケジュール</a></li>
+              　
+              <li><a href="/keisan">BMI計算ツール</a></li>
+              　
+              <li><a href="/qa">筋トレＱ＆A</a></li>
+              　
+              <li><a href="#">筋トレと栄養について</a></li>
+              
+            </ul>
+          </nav>
+      </header>
+  <main>
+    <br>
+    <br>
+    <h1>&emsp;<font size="+2">☑筋トレと食事について　～筋トレに効果的な食事～</font></h1>
+    <br>
+    <img src="{{ url_for('static', filename='css/meal.css') }}"alt="meal"width="720"height="450">
+    <br>
+        <h4><p>こんにちは！</p>
+        <p>みなさんは日々筋トレをする中で食事に気を使っていますか？</p>
+        <p>食事はトレーニングの次に大事なもので,トレーニングの質を高めるほか、筋肉の生成に欠かせない要素です。</p>
+        <p>そこで今回は、筋トレに適した食材とメニュー、NGな食材、食事するタイミングを紹介していきます。</p></h4>
+    <br>
+    <div>
+        <div style="padding: 10px; margin-bottom: 10px; border: 3px solid #868686;width:700px;height:500;">
+        <h2>&emsp;☑目次<!DOCTYPE html></h2>
+        <h3><p>・五大栄養素の役割と摂れる食材</p>
+        <p>・筋トレ用食事メニューの例</p>
+        <p>・出来れば避けたい食事</p>
+        <p>・食事のタイミング</p>
+        <p>・まとめ</p></h3>
+    </div>
+    <br>
+    <br>
+    <h2>☑五大栄養素の役割と摂れる食材</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/meal2.css') }}"alt="meal2"width="720"height="450">
+    <br>
+    <br>
+        <h4><p>筋トレを効果的に行い筋肉量を効率的に増やすには、筋肉の材料であるタンパク質はもちろん、</p>
+        <p>筋肉の働きに関わる栄養素をバランスよく摂取することが重要です。</p>
+        <p>この項目では、筋肉を増やすために大切な栄養素とその役割、それが含まれている食材について紹介します。</p></h4>
+    <br>
+    <br>
+    <h2>タンパク質</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/purotein.css') }}"alt="purotein"width="720"height="450">
+    <h4><P>タンパク質は、20種類のアミノ酸が多数繋がって出来ていて、筋肉や臓器、髪、爪の主成分になっています。</p>
+        <p>タンパク質は筋肉構成に必要不可欠な栄養素で、アミノ酸を供給することで筋肉の修復と筋肥大に関わります。筋トレによって生じた微小なダメージは</p>
+        <p>たんぱく質によって筋肉は修復され成長します。このプロセスを促進するには、適量のタンパク質が必要であり、筋トレ後だけでなく1日にかけてたんぱ</p>
+        <p>く質を摂取することで筋肉の修復と成長を促進することができます。</p>
+        <p>筋トレの効果を高めるタンパク質の一日摂取量は<span class ="marker-normal">【体重×2】</span>が目安です。プロテインを活用しながら1日の中で摂取出来るように心がけましょう！</p></h4>
+    <br>
+        <h4><span style =color:#36899b;>【高タンパク質の食品】➡</span> <span class ="marker-normal">肉類(鶏肉、牛モモ肉等)魚介類(鮭、アジ、イワシ、エビ等)、鶏卵、乳製品(チーズ、ヨーグルト等)</span></h4>
+    <br>
+    <h2>炭水化物</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/carb.css') }}"alt="carb"width="720"height="450">
+    <h4><p>炭水化物(糖質)は、筋肉や肝臓にグリコーゲンとして蓄えられ、体を動かす主なエネルギー源として使われます。</p>
+        <p>適切な量の炭水化物は、筋トレ中に必要なエネルギーをサポートし、筋肉の修復にも必要不可欠な役割を果たします。炭水化物は、インスリンと</p>
+        <p>いうホルモンの分泌を促進することで、筋肉に必要な栄養素を運ぶ役割を担います。ただし、過剰な炭水化物の摂取は、体重増加やインスリン抵抗性</p>
+        <p><span class ="marker-normal">(インスリンの作用が鈍くなる)</span>を引き起こす可能性があり、糖尿病などの生活習慣病を引き起こす可能性があるため、摂取量には注意が必要です。</p>
+        <p>自分のなりたい体に合わせて適切な量の炭水化物を把握し、摂取するようにしましょう。</p></h4>
+    <br>
+    <h2>脂質</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/lipid.css') }}"alt="lipid"width="720"height="450">
+    <h4><p>脂質は体を動かすのに必要なエネルギー源になります。</p>
+        <p>そのほかにも、筋肉に必要な脂溶性ビタミンの吸収を助ける細胞膜の構成成分やホルモンの合成にも重要な役割を果たしています。</p>
+        <p>ただし、脂質の過剰な摂取は、肥満や動脈硬化などの生活習慣病のリスクを高めるので、適度な量の脂質を摂取することが重要です。</p>
+        <p>特に飽和脂肪酸やトランス脂肪酸と呼ばれる脂質を過剰に摂取することは健康に悪影響を与えます。</p>
+        <p>心臓や細胞膜の健康を維持したり、脂溶性ビタミンの吸収を促進する効果のある<span class ="marker-normal">良質な脂質</span>が含まれる食品を意識して取り入れましょう。</p></h4>
+    <br>
+        <h4><span style =color:#36899b;>【良質な脂質が含まれている食品】➡</span> <span class ="marker-normal">青魚、ナッツ(種子類)、アボカド、オリーブオイル</span></h4>
+    <br>
+    <h2>ビタミン</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/vitamin.css') }}"alt="vitamin"width="720"height="450">
+    <h4><p>ビタミンとは、ヒトの身体に欠かせない微量栄養素で体内では作られないため、食品から摂取する必要があります。</p>
+        <p>ビタミンには、代謝や免疫機能の維持、細胞の成長や修復、酵素の働きを助けるなどの働きがあります。ビタミンの中で筋トレに最も強く関わるのは、</p>
+        <p><span class ="marker-normal">ビタミンB6</span>でタンパク質の合成や代謝に関わっています。また、<span class ="marker-normal">ビタミンD</span>も筋力の向上や筋機能の回復に役立つ可能性が示されています。さらに、</p>
+        <p>筋トレに必要なエネルギーを作るために必要な<span class ="marker-normal">ビタミンB1</span>、<span class ="marker-normal">ビタミンB2</span>などの栄養素も必要です。</p>
+    <br>
+    <h4><span style =color:#36899b;>【ビタミンB群(ビタミンD)とそれぞれを多く含む食品】</span>
+        <p>ビタミンB1➡<span class ="marker-normal">豚肉、穀類など</span></p>
+        <p>ビタミンB2➡<span class ="marker-normal">レバー、ハツなど</span></p>
+        <p>ビタミンB6➡<span class ="marker-normal">肉類、魚類、にんにくなど</span></p>
+        <p>ビタミンB12➡<span class ="marker-normal">貝類や魚卵、レバーなど</span></p>
+        <p>ビタミンD➡<span class ="marker-normal">魚介類、卵類、乳類、きのこ類</span></p>
+    <br>
+        <h2>ミネラル</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/mineral.css') }}"alt="mineral"width="720"height="450">
+    <h4><p>ミネラルとは、身体に必要な微量栄養素の一種です。</p>
+        <p>ミネラルは、体内の様々な機能に関与しており、酵素の働きを補助するなどの重要な役割を持っています。</p>
+        <p>代表的なミネラルには、<span class ="marker-normal">カルシウム</span>、<span class ="marker-normal">鉄</span>、<span class ="marker-normal">マグネシウム</span>、<span class ="marker-normal">亜鉛</span>、<span class ="marker-normal">セレン</span>などがあります。これらのミネラルは、骨や歯の</p>
+        <p>形成、血液の形成、筋肉の収縮、神経伝達、免疫機能の維持など、身体の様々な機能に必要不可欠な役割を果たしています。</p>
+        <p>健康を維持するために欠かせない栄養素です。</p></h4>
+    <br>
+    <br>
+    <h2>☑筋トレ用食事メニューの例</h2>
+        <br>
+        <h4><p>ここまで筋トレにおいての五大栄養素の役割を紹介してきました。</p>
+        <p>それでは、これらの栄養素を食事からバランスよく取り入れるためのお手軽な料理レシピを紹介していきます。</p></h4>
+        <br>
+        <h3><span style =color:#36899b;>【メニュー1】鶏むねチャーシュー</span></h3>
+        <h4>〇材料(1人分)
+        <p>・鶏むね肉：1枚</p>
+        【調味料】
+        <p>・醤油：大さじ3</p>
+        <p>・砂糖：大さじ2</p>
+        <p>・みりん：大さじ1</p>
+        <p>・穀物酢：大さじ1/2</p>
+        <p>・味の素：3振り</p>
+        <p>・にんにく(お好みで)：適量</p></h4>
+        <br>
+        <h4>〇作り方
+        <p>1⃣.鶏むね肉の両面にフォークでまんべんなく穴を空ける。</p>
+        <p>2⃣.耐熱袋に鶏むね肉と【調味液】を入れ、よく揉みこむ。</p>
+        <p>3⃣.鶏むね肉がつかるぐらいの鍋にお湯を沸かした後、鶏むね肉を入れて火を消し、蓋をして30分程度放置。</p>
+        <p>4⃣.30分経てば取り出し、お好みの大きさにカットしたら出来上がり。</p></h4>
+        <br>
+
+        <h3><span style =color:#36899b;>【メニュー2】鶏つくねの卵スープ</span></h3>
+        <h4>〇材料(8食分)
+        <p>・鶏むねひき肉：300g</p>
+        <p>・木綿豆腐：150g</p>
+        【A】
+        <p>・片栗粉：大さじ1</p>
+        <p>・塩こしょう：少々</p>
+        <p>・おろししょうが：1~2cm</p>
+        <p>・料理酒：大さじ1</p>
+        <p>・マヨネーズ：大さじ1</p>
+        【B】
+        <p>・水：1L</p>
+        <p>・鶏ガラスープの素：大さじ1</p>
+        <p>・しょうゆ：小さじ1</p>
+        【C】
+        <p>・長ねぎ：好きなだけ/p>
+        <p>・卵：1~2個</p>
+        <br>
+        <h4>〇作り方
+        <p>1⃣.鶏むねひき肉と水切りした木綿豆腐、【A】を加えよく揉みこむ。</p>
+        <p>2⃣.鍋に【B】を鍋に入れて沸かし、沸騰している状態で1⃣をスプーンなどですくって入れる。</p>
+        <p>3⃣.5分程煮込んだら、斜め切りした長ねぎを入れ火が通るまで煮る。</p>
+        <p>4⃣.といた卵をまわしかけ卵に火が通ったら出来上がり。</p></h4>
+        <br>
+    
+        <h3><span style =color:#36899b;>【メニュー3】ツナとブロッコリーのさっぱり和え</span></h3>
+        <h4>〇材料(2人分)
+        <p>・ブロッコリー：1房</p>
+        <p>・水：100cc</p>
+        <p>・塩：適量</p>
+        <p>・ツナ缶：1缶</p>
+        【調味料】
+        <p>・ポン酢：小さじ2</p>
+        <p>・白すりごま：小さじ2</p>
+        <p>・ごま油：小さじ1</p>
+        <p>・すりおろしにんにく:小さじ1/2</p></h4>
+        <br>
+        <h4>〇作り方
+        <p>1⃣.ブロッコリーを小分けにして水洗いします。</p>
+        <p>2⃣.フライパンにブロッコリーと水100ccと塩を入れ、蓋をして水分が飛ぶまで蒸します。</p>
+        <p>3⃣.取り出したブロッコリーにツナ缶と調味液を入れて和えたら出来上がり。</p></h4>
+        <br>
+
+        <h3><span style =color:#36899b;>【メニュー4】プロテインパンケーキ</span></h3>
+        <h4>〇材料(1人分)
+        <p>・オートミール：30g</p>
+        <p>・水または牛乳(豆乳)：50㎖</p>
+        <p>・プロテインパウダー（お好みの味）：1スクープ</p>
+        <p>・バナナ：1本(お好みで)</p>
+        <p>・卵：1個</p>
+        <p>・ベーキングパウダー：3g~5g
+        <p>・オリーブオイル（パンケーキを焼くため）：適量</p></h4>
+        <br>
+        <h4>〇作り方
+        <p>1⃣.オートミール30gに水50㎖を加え、電子レンジで600w3分加熱する。</p>
+        <p>2⃣.1⃣に卵1個とプロテイン1スクープ、ベーキングパウダーを加えよくかき混ぜる。</p>
+        <p>3⃣.フライパンにオリーブオイルを適量引き、2⃣を焼く。</p>
+        <p>4⃣.表面に気泡が出て来たらひっくり返して裏面も焼く。</p>
+        <p>5⃣.両面に焼き色が付いたら出来上がり(お好みでシロップやシナモンをかけてください)</p></h4>
+    <br>
+    <br>
+    <h2>☑避けるべき食事方法</h2>
+    <br>
+    <h4><p>筋トレを効果的にするには
+    <p>➀<span class ="marker-normal">「脂質の多すぎる食事」</span></p>
+    <p>➁<span class ="marker-normal">「アルコールの摂りすぎ」</span></p>
+    <p>➂<span class ="marker-normal">「朝ごはんを食べない」</span></p>
+    <p>といったことを避ける必要があります。</p></h4>
+    <br>
+    <h3><p>➀「脂質の多すぎる食事」</p></h3>
+        <img src="{{ url_for('static', filename='css/fat.css') }}" alt="fat.css"width="720"height="450">
+        <h4><p>脂質は1gあたり9kcalで三大栄養素(炭水化物、脂質、タンパク質)の中で最もエネルギーが高く、摂りすぎると、</p>
+        <p><span class ="marker-normal">体重増加や生活習慣病のリスクが高まる</span>などのデメリットがあります。</p>
+        <p>ただし不足すると疲れやすくなったり免疫力が低下してしまうので、青魚やナッツ類等で良質な脂質を適度に摂取しましょう</p></h4>
+    <br>
+    <h3><p>➁「アルコールの摂りすぎ」</p></h3>
+        <img src="{{ url_for('static', filename='css/alcohol.css') }}" alt="alcohol.css"width="720"height="450">
+        <h4><p>アルコールには、<span class ="marker-normal">筋肉の合成を抑制し分解してしまう作用</span>があります。</p>
+        <p>どうしても飲みたい場合は間隔をあけたり、おつまみもヘルシーなものに変えましょう。</p></h4>
+    <br>
+    <h3><p>➂「朝ごはんを食べない」</p></h3>
+        <img src="{{ url_for('static', filename='css/breakfast.css') }}" alt="breakfast.css"width="720"height="450">
+        <h4><p>朝食をとらないと体内の栄養の循環が低下してその日の<span class ="marker-normal">筋トレのパフォーマンスが落ちてしまいます</span>。</p>
+        <p>朝食には一日のタンパク質の代謝を挙げてくれる効果もあるのでなるべくとるようにしましょう。</p></h4>
+    <br>
+    <br>
+    <h2>☑食事のタイミング</h2>
+    <br>
+    <h4><p>続いて、ご飯を食べるタイミングについてご紹介します。</p>
+    <p>筋トレ前に食べること、筋トレ後に食べること、どちらにもメリット・デメリットが存在します。</p></h4>
+    <br>
+    <h4><p>〇<span class ="marker-normal">筋トレ前にご飯を食べるメリット</span></p>
+    <p>食後2時間以上経過し、食べたものが消化され、身体に栄養が行き渡っている状態で筋トレすると効果が高まります。</p>
+    <p>空腹の状態で筋トレをしてしまうと、身体が筋肉を分解してエネルギーを確保してしまうので注意が必要です。</p>
+    <p>空腹の場合は、筋トレの1~2時間ほど前に消化のいいものを軽食として食べるようにしましょう。</p></h4>
+    <br>
+    <h4><p>〇<span class ="marker-normal">筋トレ前にご飯を食べるデメリット</span></p>
+    <p>注意すれば大丈夫ですが、食事直後の筋トレはNGです。</p>
+    <p>食事した後は消化するために血液が消化器官に集中しており、それとともに身体がリラックスモードに入るため、</p>
+    <p>副交感神経が優位になっています。その状態で無理に筋トレをすると、消化不良や腹痛、吐き気の原因となるので、</p>
+    <p>間隔をあけるようにしてください。</p></h4>
+    <br>
+    <h4><p>〇<span class ="marker-normal">筋トレ後にご飯を食べるメリット</span></p>
+    <p>筋トレ後に食事をすることで、筋トレで破壊された筋繊維の回復を効率的にすることができます。</p>
+    <p>筋トレ後の30分~1時間30分ほどの時間は筋肉の「ゴールデンタイム」と呼ばれています。</p>
+    <p>プロテイン等のサプリメントをかつようするなど、五大栄養素をバランスよく摂取するように心がけましょう。</p></h4>
+    <br>
+    <h4><p>〇<span class ="marker-normal">筋トレ後にご飯を食べるデメリット</span></p>
+    <p>筋トレ後にご飯を食べるデメリットは…ありません！！</p>
+    <p>ただ身体を動かした後はお腹がすくと思います、食べ過ぎには注意しましょう！</p>
+    <br>
+    <br>
+    <h2>まとめ</h2>
+    <br>
+    <div style="padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:900px;height:300;">
+    <h4><p>&emsp;筋トレに大事な栄養と食事についてご紹介しました、いかがでしたでしょうか？</p>
+    <p>&emsp;筋トレの効果は食事の内容で大きく変わるので、自分の生活リズムに合わせて食事を工夫することが大切です。
+    <p>&emsp;自分なりに応用を利かせて筋トレに励んでいってくださいね。</p></h4>
+    </div>
+    <br>
+    <br>
+  </main>
+ 
+  <footer>
+    <p>&copy; 2024　HUSTLE ＆ MUSCLE</p>
+  </footer>
+</body>
+</html>
+<button type="submit">Logout</button>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>筋トレ入門</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        /* CSSスタイル */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family:Terminal, sans-serif;
+            line-height: 3;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+        }
+ 
+        header {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+        }
+ 
+        nav ul {
+            list-style: none;
+        }
+ 
+        nav ul li {
+            display: inline;
+            text-decoration: underline;
+            text-decoration-color: #dbdcdc; /* 下線の色を黄色にする */
+            margin-right: 20px;
+        }
+       
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+ 
+        nav a:active {
+            color: yellow; /* クリック時の色をここで指定 */
+        }
+ 
+        main {
+            background-color: #ffffff;
+            color:#000000 ;
+            padding: 20px;
+        }
+
+        main h2 {
+            color:#36899b ;
+            padding: 0.3em;
+            padding-bottom: .50px;
+            border-bottom: solid 3px #36899b;
+        }
+
+        .marker-normal {
+            background: linear-gradient(transparent 75%, #ffff7f 75%);
+        }
+
+        footer {
+            background-color:#36899b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+ 
+ 
+    </style>
+</head>
+ 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HUSTLE ＆ MUSCLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form method="POST" action="/logout">
+        <button type="submit" class="button">Logout</button>
+    </form> 
+  <header>
+      <h1><a href="/top">HUSTLE ＆ MUSCLE</a></h1>
+      <nav>
+        <ul>
+          <li><a href="#">筋トレ入門</a></li>
+          　
+          <li><a href="schedule">スケジュール</a></li>
+          　
+          <li><a href="keisan">BMI計算ツール</a></li>
+          　
+          <li><a href="qa">筋トレＱ＆A</a></li>
+          　
+          <li><a href="meal">筋トレと栄養について</a></li>
+        </ul>
+      </nav>
+  </header>
+ 
+  <main>
+    <br>
+    <br>
+    <h1>&emsp;<font size="+2">☑筋トレ入門</font></h1>
+    <br>
+    <img src="{{ url_for('static', filename='css/nyumon.css') }}" alt="nyumon"width="720"height="450">
+    <br>
+        <h4><p>なぜ何十回・何百回もするトレ－ニングは効果が薄いのでしょうか？</p>
+        <p>どうしたら効率的に筋肉を成長させていけるでしょうか？</p>
+        <p>ここでは効果的な筋トレを行うための基礎的な知識や理論について解説していきます。</p></h4>
+    <br>
+    <div>
+        <div style="padding: 10px; margin-bottom: 10px; border: 3px solid #868686;width:700px;height:500;">
+        <h2>&emsp;☑目次<!DOCTYPE html></h2>
+        <h3><p>・速筋と遅筋</p>
+        <p>・筋肥大のメカニズム</p>
+        <p>・筋トレの種類と特徴</p>
+        <p>・トレーニングのポイント</p>
+        <p>&emsp;─1回あたりのトレーニング時間</p>
+        <p>&emsp;─トレーニングの頻度</p>
+        <p>&emsp;─高重量をあつかう</p>
+        <p>&emsp;─スロートレーニング</p>
+        <p>・全身法と分割法</p>
+        <p>・まとめ</p></h3>
+    </div>
+    <br>
+    <br>
+    <h2>☑速筋と遅筋</h2>
+    <br>
+    <br>
+    <br>
+    <h4><p>筋肉を構成する筋繊維には<span class ="marker-normal">速筋繊維</span>と<span class ="marker-normal">遅筋繊維</span>の2つの種類があります。</p></h4>
+    <br>
+    <h3>▶<span class ="marker-normal">速筋繊維</span></h3>
+    <img src="{{ url_for('static', filename='css/sokukin.css') }}" alt="sokukin"width="700"height="550">
+    <h4><p>・瞬発力に優れ、大きな力を短い時間発揮できる。</p>
+    <p>・収縮速度が速い。</p>
+    <p>・筋肉中に酸素を取り入れない。</p></h4>
+    <br>
+    <h3>▶<span class ="marker-normal">遅筋繊維</span></h3>
+    <img src="{{ url_for('static', filename='css/tikin.css') }}" alt="tikin"width="700"height="550">
+    <h4><p>・持久力に優れ、小さな力を継続的に発揮できる。</p>
+    <p>・収縮速度が遅い。</p>
+    <p>・筋肉中に酸素を取り入れる。</p></h4>
+    <br>
+    <h3>▶たくましい身体になりたいなら速筋繊維を鍛える</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 470px;"></div>
+    <img src="{{ url_for('static', filename='css/mukimuki.css') }}" alt="mukimuki"width="720"height="450">
+    <br>
+    <h4><p>筋トレによって大きくたくましい筋肉へと成長するのは速筋繊維です。</p>
+    <p>あなたがメリハリのある筋肉質な体型になりたいなら筋トレで速筋を鍛えましょう！</p>
+    <br>
+    <p>また、筋肉が大きく成長することで… </p>
+    <p>☑<span class ="marker-normal">基礎代謝の向上</span></p>
+    <p>☑<span class ="marker-normal">筋力の向上</span></p>
+    <p>☑<span class ="marker-normal">瞬発力の向上</span></p>
+    <p>☑<span class ="marker-normal">ダイエット</span></p>
+    <p>といった効果が期待できます。</p></h4>
+    <br>
+    <br>
+    <h2>☑筋肥大のメカニズム</h2>
+    <br>
+    <img src="{{ url_for('static', filename='css/kinhidai.css') }}" alt="kinhidai.css"width="720"height="450">
+    <h4><p>「筋肥大」とは筋肉の筋細胞が増加・成長し、筋肉が大きくなることです。</p>
+    <p>ここでは、筋肥大のメカニズムについて紹介していきます！</p></h4>
+    <br>
+    <h4><p>まず、筋肉は筋繊維という細い筋細胞が束になってできています。この筋繊維はトレーニングの負荷によって傷つき、</p>
+    <p>食事で十分な栄養を摂取し休息をとることによって再び筋繊維が合成されます。この筋繊維が合成される際に、筋繊維</p>
+    <p>が分解される前より少しだけ太く合成されます。これを【<span class ="marker-normal">超回復</span>】と言います。</p>
+    <p>このサイクルを繰り返すことで筋肉が成長し筋肉量が増えていくといった流れが筋肥大のメカニズムです。</p>
+    <p>ただし、数回程度のトレーニングでは筋肥大をさせることは難しく、筋肥大させていくにはトレーニングの積み重ねが大切です。</p></h4>
+    <br>
+    <br>
+    <h2>☑筋トレの種類と特徴</h2>
+    <br>
+    <h4><p>筋トレ方法の種類にはおおまかに以下の3つのタイプがあります。</p>
+    <br>
+    <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:200;">
+    <p>➀自重トレーニング</p>
+    <p>➁フリーウエイトトレーニング</p>
+    <p>➂マシントレーニング</p>
+    </div>
+    <br>
+    <p>1つ目は<span class ="marker-normal">自重トレーニング</span>です。</p>
+    <img src="{{ url_for('static', filename='css/sukuwatto.css') }}" alt="sukuwatto"width="700"height="550">
+    <p>自分自身の体重を使って筋トレを行います。自宅でも手軽に始められ、複雑な動きを必要としないことがメリットです。</p>
+    <p>ただ、自重であるため高負荷なトレーニングが難しく、ピンポイントで筋肉を大きくしていくということには不向きです。</p> 
+    <br>
+    <p>2つ目は<span class ="marker-normal">フリーウエイトトレーニング</span>です。</p>
+    <img src="{{ url_for('static', filename='css/benti.css') }}" alt="benti"width="700"height="550">
+    <p>フリーウエイトとは、ダンベルやバーベルなどで重量を決め、自分でフォームを意識して行うトレーニングです。</p>
+    <p>身体の動きが自由で多彩な種目を高負荷で行えます。また、後述するマシントレーニングより可動域が広く、動き</p>
+    <p>を微調整できるといったことがメリットと言えます。</p>
+    <br>
+    <p>3つ目は<span class ="marker-normal">マシントレーニング</span>です。</p>
+    <img src="{{ url_for('static', filename='css/pekku.css') }}" alt="pekku"width="700"height="550">
+    <p>トレーニングジムに備え付けられたマシンを使用して行うトレーニングです。鍛える部位に則って設計されて</p>
+    <p>いるため、初心者でも正しく安全にトレーニング出来ます。フリーウエイトの場合、回数を重ねると辛くなり</p>
+    <p>フォームが乱れてしまいますが、マシンの場合動作の軌道が決まっているので安定した動作で行えます。</p>
+    <br>
+    <p>『当サイトでは、自宅で可能な自重・フリーウエイトのトレーニングメニュー作成をお手伝いします。』</p>
+    <br>
+    <br>
+    <h2>☑トレーニングのポイント</h2>
+    <br> 
+    <h4><p>ここからは筋トレを効果的に行うためのポイントについて、要点を解説していきます。</p></h4>
+    <br>
+    <h3>▶1回あたりのトレーニング時間</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 320px;"></div>
+    <h4><p>筋トレは短期集中で行いましょう。</p>
+    <p>おおよそ1時間~1時間半程度で終えることが理想的と言えます。</p>
+    <p>長時間のトレーニングによりエネルギーが不足すると筋肉が分解されてしまうほか、</p>
+    <p>筋肉の成長に必要なテストステロンというホルモンが減少してしまいます。</p></h4>
+    <br>
+    <h3>▶トレーニングの頻度</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 220px;"></div>
+    <h4><p>筋肉が十分な回復が取れる時間を空けるようにしましょう。</p>
+    <p>筋肉が疲労している状態でトレーニングを行うと筋肉が回復できず消耗していってしまいます。</p>
+    <p>低負荷のトレーニングで筋肉の疲労や痛みがない場合は毎日トレーニングをしても大丈夫です。</p>
+    <br>
+    <h3>▶高重量をあつかう</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 220px;"></div>
+    <h4><p>高重量を扱うことで筋肥大を促す成長ホルモンが分泌されやすくなります。</p>
+    <p>また、高負荷のトレーニングは前述した速筋繊維が優位になるので筋肥大・筋力向上効果が</p>
+    <p>得られやすいといったメリットがあります。ギリギリ10回程度できるかどうかの重量で行う</p>
+    <p>ようにしましょう。</p>
+    <br>
+    <h3>▶スロートレーニング</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 220px;"></div>
+    <h4><p>名前の通り、ゆっくりとした動作で行うトレーニング方法です。</p>
+    <p>スロートレーニングにおいて、3~5秒かけて上げ、3~5秒かけて下げるという動作が一般的です。</p>
+    <p>筋肉が緊張している時間が長い(強い負荷がかかる)ため、軽・中重量でも大きな筋肥大・筋力向上効果が得られます。</p>
+    <br>
+    <br>
+    <h2>☑全身法と分割法</h2>
+    <br>
+    <h3>▶全身法</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 90px;"></div>
+    <h4><p>全身法とは、1回のトレーニングで全身を鍛える手法のことです。</p>
+    <br>
+    <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:200;">
+    <p>日曜日&emsp;➡&emsp;休息日</p>
+    <p>月曜日&emsp;➡&emsp;トレーニング</p>
+    <p>火曜日&emsp;➡&emsp;休息日</p>
+    <p>水曜日&emsp;➡&emsp;トレーニング</p>
+    <p>木曜日&emsp;➡&emsp;休息日</p>
+    <p>金曜日&emsp;➡&emsp;トレーニング</p>
+    <p>土曜日&emsp;➡&emsp;休息日</p></h4>
+    </div>
+    <h4><p>上記のようなメニューをローテーションしていきます。</p>
+    <p>1度に全身を鍛えるため、1トレーニングあたりの成長度が高い初心者におすすめです。</p>
+    <p>ただし、1回当たりのトレーニング時間は多くなるので忙しい方には不向きかもしれません。。</p></h4>
+    <br>
+    <h3>▶分割法</h3>
+    <div style="padding: 0.3em;padding-bottom: .50px;border-bottom: solid 2px #36899b;width: 90px;"></div>
+    <h4><p>分割法とは、1回のトレーニングで鍛える部分を胸、肩、腕、背中、脚などの部位別に分割する方法です。</p>
+    <br>
+    <div style="color: #841f1f;padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:500px;height:200;">
+    <p>日曜日&emsp;➡&emsp;休息日</p>
+    <p>月曜日&emsp;➡&emsp;胸・上腕二頭筋</p>
+    <p>火曜日&emsp;➡&emsp;脚</p>
+    <p>水曜日&emsp;➡&emsp;休息日</p>
+    <p>木曜日&emsp;➡&emsp;休息日</p>
+    <p>金曜日&emsp;➡&emsp;肩・上腕三頭筋</p>
+    <p>土曜日&emsp;➡&emsp;背中</p></h4>
+    </div>
+    <h4><p>上記のようなメニューをローテーションしていきます。</p>
+    <p>一回のトレーニングで集中して特定の筋肉部位を鍛えることが可能なため、対象の筋肉を追い込みやすいです。</p>
+    <p>また、次のローテーションまでトレーニングした対象の部位に回復期間を設けることができることもメリットです。</p>
+    <br>
+    <p>『当サイトでは、分割法のメニュー作成をお手伝いします。』</p>
+    <br>
+    <br>
+    <h2>☑まとめ</h2>
+    <br>
+    <div style="padding: 10px; margin-bottom: 10px; border: 3px solid #841f1f;width:900px;height:300;">
+    <h4><p>&emsp;今回は筋トレに関する基礎知識について紹介しました。</p>
+    <p>&emsp;正しい知識を身に着け、自分に合った方法を選択してみてください。</p>
+    <p>&emsp;筋トレは継続することがなによりも大切です、目標に向かって続けていきましょう！</p></h4>
+    </div>
+    <br>
+    <br>
+  </main>
+  <footer>
+    <p>&copy; 2024　HUSTLE ＆ MUSCLE</p>
+  </footer>
+</body>
+</html>

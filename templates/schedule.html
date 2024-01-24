@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>ようこそ　筋トレを始めていきマッチョ！！</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        /* CSSスタイル */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family:Terminal, sans-serif;
+            line-height: 3;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+        }
+
+        zero {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: left;
+            padding: 0px;
+        }
+ 
+        header {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+        }
+ 
+        nav ul {
+            list-style: none;
+        }
+ 
+        nav ul li {
+            display: inline;
+            text-decoration: underline;
+            text-decoration-color: #dbdcdc; /* 下線の色を黄色にする */
+            margin-right: 20px;
+        }
+       
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+ 
+        nav a:active {
+            color: yellow; /* クリック時の色をここで指定 */
+        }
+ 
+        main {
+            background-color: #ffffff;
+            color:#000000 ;
+            padding: 20px;
+        }
+ 
+        main h2 {
+            background-color: #36899b;
+            color:#ffffff ;
+            padding: 5px;
+    
+        }
+
+        main h3{
+            background-color: #dbdcdc;
+            color:#000000 ;
+            padding: 0.3em;
+            border-bottom: solid 3px #36899b;
+    
+        }
+
+        .marker-normal {
+            background: linear-gradient(transparent 75%, #ffff7f 75%);
+        }
+
+        footer {
+            background-color:#36899b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+ 
+ 
+    </style>
+</head>
+ 
+<body>
+    <form method="POST" action="/logout">
+        <button type="submit" class="button">Logout</button>
+    </form> 
+  <header>
+      <h1><a href="/top">HUSTLE ＆ MUSCLE</a></h1>
+      <nav>
+        <ul>
+          <li><a href="training">筋トレ入門</a></li>
+          　
+          <li><a href="#">スケジュール</a></li>
+          　
+          <li><a href="/keisan">BMI計算ツール</a></li>
+          　
+          <li><a href="/qa">筋トレＱ＆A</a></li>
+          　
+          <li><a href="/meal">筋トレと栄養について</a></li>
+        </ul>
+      </nav>
+  </header>
+</style>
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #36899b; /* ヘッダーの背景色 */
+      color: #ffffff; /* ヘッダーのテキスト色 */
+    }
+
+    td {
+      background-color: #dbdcdc; /* 曜日の背景色 */
+    }
+  </style>
+
+  <h2>週間スケジュール</h2>
+  <table>
+    <tr>
+      <th>日曜日</th>
+      <td>{{ schedule_data[0] | safe }}</td></tr>
+    <tr>
+      <th>月曜日</th>
+      <td>{{ schedule_data[1] | safe }}</td>
+    </tr>
+    <tr>
+      <th>火曜日</th>
+      <td>{{ schedule_data[2] | safe }}</td>
+    </tr>
+    <tr>
+      <th>水曜日</th>
+      <td>{{ schedule_data[3] | safe }}</td>
+    </tr>
+    <tr>
+      <th>木曜日</th>
+      <td>{{ schedule_data[4] | safe }}</td>
+    </tr>
+    <tr>
+      <th>金曜日</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>土曜日</th>
+      <td></td>
+    </tr>
+  </table>
+{% endblock %}

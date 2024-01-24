@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>BMI計算ツール</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        /* CSSスタイル */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            font-family:Terminal, sans-serif;
+            line-height: 3;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+        }
+
+        zero {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: left;
+            padding: 0px;
+        }
+ 
+        header {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+        }
+ 
+        nav ul {
+            list-style: none;
+        }
+ 
+        nav ul li {
+            display: inline;
+            text-decoration: underline;
+            text-decoration-color: #dbdcdc; /* 下線の色を黄色にする */
+            margin-right: 20px;
+        }
+       
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+ 
+        nav a:active {
+            color: yellow; /* クリック時の色をここで指定 */
+        }
+ 
+        main {
+            background-color: #ffffff;
+            color:#000000 ;
+            padding: 20px;
+        }
+ 
+        main h2 {
+            background-color: #36899b;
+            color:#ffffff ;
+            padding: 5px;
+    
+        }
+
+        main h3{
+            background-color: #dbdcdc;
+            color:#000000 ;
+            padding: 0.3em;
+            border-bottom: solid 3px #36899b;
+    
+        }
+
+        .marker-normal {
+            background: linear-gradient(transparent 75%, #ffff7f 75%);
+        }
+
+        footer {
+            background-color:#36899b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+ 
+ 
+    </style>
+</head>
+ 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>HUSTLE ＆ MUSCLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form method="POST" action="/logout">
+        <button type="submit" class="button">Logout</button>
+    </form> 
+  <header>
+      <h1><a href="/top">HUSTLE ＆ MUSCLE</a></h1>
+      <nav>
+        <ul>
+          <li><a href="training">筋トレ入門</a></li>
+          　
+          <li><a href="schedule">スケジュール</a></li>
+          　
+          <li><a href="#">BMI計算ツール</a></li>
+          　
+          <li><a href="/qa">筋トレＱ＆A</a></li>
+          　
+          <li><a href="/meal">筋トレと栄養について</a></li>
+        </ul>
+      </nav>
+  </header>
+</style>
+  <script>
+     function calculateBMI() {
+        var height = parseFloat(document.getElementById('height').value);
+        var weight = parseFloat(document.getElementById('weight').value);
+
+        if (!isNaN(height) && !isNaN(weight)) {
+            var bmi = weight / ((height / 100) ** 2);
+            document.getElementById('result').innerHTML = 'あなたのBMIは ' + bmi.toFixed(2) + ' です。';
+        } else {
+            document.getElementById('result').innerHTML = '身長と体重を半角数字で入力してください。';
+        }
+    }
+  </script>
+</style>
+  <main>
+    <h1>【BMI計算ツール】</h1>
+    <p>身長（cm）: <input type="text" id="height"></p>
+    <p>体重（kg）: <input type="text" id="weight"></p>
+    <button onclick="calculateBMI()">BMIを計算する</button>
+    <p id="result"></p>
+
+    <br>
+    <h2>▶BMIとは<!DOCTYPE html></h2>
+    <h4><p>BMI(Body Mass Index)はボディマス指数と呼ばれ、身長と体重をもとに算出される肥満度を表す体格指数です。</p>
+    <p>子どもには別の指数が存在しており、BMIは成人の国際的指標となっています。健康を維持するために自分の現在のBMIを把握しておくことが大切です。</p><h4>
+    <img src="{{ url_for('static', filename='css/BMI.css') }}" alt="BMI計算">
+    <br>
+    <h3>〇子どもの場合<!DOCTYPE html></h4>
+    <h4>幼児には「カウプ指数」、学童には「ローレル指数」が用いられます。</h4>
+    <br>
+    <h3>〇筋肉質な方の場合<!DOCTYPE html></h3>
+    <h4><p>BMIは「身長が高いほど体重が重くなる」という考え方に基づいているため、筋肉量が多く体重が重いという人は指標に当てはまらないことがあります。</p>
+        <p>そういった場合は【体脂肪率】を指標としましょう。</p><h4>
+    <br>
+    <h3>〇細マッチョの定義<!DOCTYPE html></h3>
+    <h4>細マッチョの定義は【BMI値20~23】【体脂肪率10%～15%】筋肉量で体型に違いが出るので参考程度に。</h4>
+    <br>
+    <br>
+  </main>
+ 
+  <footer>
+    <p>&copy; 2024　HUSTLE ＆ MUSCLE</p>
+  </footer>
+</body>
+</html>
+
+

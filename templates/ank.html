@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アンケート</title>
+    <style>
+        /* CSSスタイル */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            max-width: auto;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family:Terminal, sans-serif;
+            line-height: 3;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        header {
+            background-color: #36899b;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color:#36899b;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 20px 20px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 要素の動きアニメーション */
+    .move {
+        position: relative;
+        animation: move 2s infinite;
+    }
+    
+    @keyframes move {
+        0% {
+            left: 0;
+        }
+        50% {
+            left: 100px;
+        }
+        100% {
+            left: 0;
+        }
+    }
+
+    </style>
+</head>
+
+<head>
+    <title>アンケート</title>
+</head>
+
+<body>
+    <form  method="POST" action="/submit_survey">
+        <header>
+            <h1>始める前のアンケート</h1>
+        </header>
+    
+        <main>
+            <section>
+                <div id="question1" >
+                    <label for="q1"><p>質問1:週に何回トレーニングする予定ですか</p></label>
+                    <input type="radio" id="q1_1"name="q1"value="1"required>
+                    <label for="q1_1">1</label>
+                    <input type="radio"id="q1_2"name="q1"value="2"required>
+                    <label for="q1_2">2</label>
+                    <input type="radio"id="q1_3"name="q1"value="3"required>
+                    <label for="q1_3">3</label>
+                    <input type="radio"id="q1_4"name="q1"value="4"required>
+                    <label for="q1_4">4</label>
+                    <input type="radio"id="q1_5"name="q1"value="5"required>
+                    <label for="q1_5">5</label>
+                </div>
+            
+                <div id="question2">
+                    <label for="q2"><p>質問2:一日にどれくらいの時間トレーニング可能ですか</p></label>
+                    <input type="radio"id="q2_30"name="q2"value="30"required>
+                    <label for="q2_30">30分</label>
+                    <input type="radio"id="q2_60"name="q2"value="60"required>
+                    <label for="q2_60">1時間</label>
+                    <input type="radio"id="q2_90"name="q2"value="90"required>
+                    <label for="q2_90">1.5時間</label>
+                    <input type="radio"id="q2_120"name="q2"value="120"required>
+                    <label for="q2_120">2時間</label>
+                </div>
+            
+                <div id="question3">
+                    <label for="q3"><p>質問3:現在、痛めている部位はありますか</p></label>
+                    <input type="checkbox"id="q3_首"name="q3"value="首">
+                    <label for="q3_首">首</label>
+                    <input type="checkbox"id="q3_肩"name="q3"value="肩">
+                    <label for="q3_肩">肩</label>
+                    <input type="checkbox"id="q3_肘"name="q3"value="肘">
+                    <label for="q3_肘">肘</label>
+                    <input type="checkbox"id="q3_腰"name="q3"value="腰">
+                    <label for="q3_腰">腰</label>
+                    <input type="checkbox"id="q3_膝"name="q3"value="膝">
+                    <label for="q3_膝">膝</label>
+                </div>
+                <div class="box fade-in">
+                <span class="icon">
+                    <h2>!!!!!!!!警告!!!!!!!!</h2>
+                    <p>怪我をしている人は怪我を悪化させないように安全に筋トレをしましょう。</p>
+                </span>
+                </div>
+                
+                <!-- 送信ボタン -->
+                <button type="submit" class="button">アンケート送信</button> 
+            </section>
+        </main>
+        <footer>
+            <p><a href="/top">&copy; 2024　HUSTLE ＆ MUSCLE</a></p>
+        </footer>
+    </form>
+</body>
+</html>

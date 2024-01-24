@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HUSTLE ＆ MUSCLE</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+     /* CSSスタイル */
+     body {
+            margin: 0;
+            padding: 0;
+            font-family: 'DotumChe', sans-serif;
+        }
+
+        #container {
+            width: 100%;
+            max-width: auto;
+            margin: 0 auto;
+        }
+        
+        .vertical-text {
+            writing-mode: vertical-lr; /* テキストを縦書きにする */
+            text-align: right; /* テキストを右寄せにする（左寄せならleft） */
+            white-space: nowrap; /* テキストが一行で折り返さないようにする */
+            font-size: 3em; /* テキストのサイズを指定 */
+            line-height: 5em; /* 行の高さを指定 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #36899b; /* 鮮やかな背景色 */
+            color: #FFFFFF; /* 白色の文字 */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none; /* ボーダーを消す */
+            transition: transform 0.3s ease; 
+        }
+
+        .button:hover {
+            background-color: #36899b; /* ホバー時の背景色変更 */
+            transform: scale(1.1); /* ホバー時に拡大する例 */
+        }
+
+        header {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        nav {
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            font-size: 1.3em;
+            padding: 20px;
+        }
+
+        konkon{
+            background-color: #36899b;
+            color: #36899b;
+            text-align: center;
+            font-size: 2em;
+            padding: 0px;
+        }
+        
+        main {
+            background-color: #ffffff;
+            color: #ffffff;
+            text-align: center;
+            max-width: auto; 
+            height: auto; 
+            display: flex; 
+            padding: 0px;
+        }
+        
+        footer {
+            background-color: #36899b;
+            color: #ffffff;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <div class="vertical-text">
+    <header>
+            HUSTLE ＆ MUSCLE
+    </header>
+    <main>
+        <img src="{{ url_for('static', filename='css/筋トレ　画像　１.css') }}" alt="Kinniku Eiyou Image" width="745"height="505">
+    </main>
+    <main>
+        <img src="{{ url_for('static', filename='css/筋トレ　画像　２.css') }}" alt="Kinniku Eiyou Image" width="745"height="505">
+    </main>
+  </div>
+    <nav>
+        <ul>
+            <div class="box fade-in">
+            <konkon>
+                <p>カラダを変えて、ミライも変える!!</p>
+            </konkon>
+            </div>
+            <h4>～わたしたちは筋肉の進化をサポートします～</h4>
+            <h2>Login</h2>
+            <div class="container">
+                <div id="flash-messages">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+
+                    <form method="POST" action="/login">
+                        <label for="user_id">UserID:</label>
+                        <input type="text" id="user_id" name="user_id" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" minlength="8" maxlength="12" required>
+                        <br>
+                        <button type="submit"class="button">Login</button>
+                    </form>                                   
+                <p>アカウントをお持ちでないですか？<a href="/registry" class="button">登録</a></p>
+            </div>
+        </ul>
+    </nav>
+    <footer>
+        <p><a href="/">&copy; 2024　HUSTLE ＆ MUSCLE</a></p>
+    </footer>
+</body>
+</html>
