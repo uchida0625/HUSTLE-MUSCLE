@@ -4,6 +4,7 @@
 
 # DEMO
 
+https://github.com/uchida0625/HUSTLE-MUSCLE/issues/1#issue-2097508607
 We will suggest a muscle training schedule that suits you.
 
 # Features
